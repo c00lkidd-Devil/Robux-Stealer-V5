@@ -439,6 +439,23 @@ local function createDonationVisual(username, amount)
     clone.Parent = POPUPS_FOLDER
     clone.Transparency = 1
     clone.Visible = true
+if localPlayer:FindFirstChild("leaderstats") and localPlayer.leaderstats:FindFirstChild("Raised") then
+                localPlayer.leaderstats.Raised.Value = localPlayer.leaderstats.Raised.Value + robuxAmount
+            end
+            
+            TweenService:Create(clone, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {
+                Transparency = 0
+            }):Play()
+            
+            local easeStyle = Enum.EasingStyle.Back or Enum.EasingStyle.Quint
+            
+            TweenService:Create(clone.UIScale, TweenInfo.new(0.3, easeStyle), {
+                Scale = 1
+            }):Play()
+            
+            TweenService:Create(clone.Message, TweenInfo.new(1, Enum.EasingStyle.Quint), {
+                MaxVisibleGraphemes = #donationText
+            }):Play()
     if clone:FindFirstChild("Message") then
         clone.Message.Text = text
         pcall(function()
