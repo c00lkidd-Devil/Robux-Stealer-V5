@@ -439,23 +439,6 @@ local function createDonationVisual(username, amount)
     clone.Parent = POPUPS_FOLDER
     clone.Transparency = 1
     clone.Visible = true
-if localPlayer:FindFirstChild("leaderstats") and localPlayer.leaderstats:FindFirstChild("Raised") then
-                localPlayer.leaderstats.Raised.Value = localPlayer.leaderstats.Raised.Value + robuxAmount
-            end
-            
-            TweenService:Create(clone, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {
-                Transparency = 0
-            }):Play()
-            
-            local easeStyle = Enum.EasingStyle.Back or Enum.EasingStyle.Quint
-            
-            TweenService:Create(clone.UIScale, TweenInfo.new(0.3, easeStyle), {
-                Scale = 1
-            }):Play()
-            
-            TweenService:Create(clone.Message, TweenInfo.new(1, Enum.EasingStyle.Quint), {
-                MaxVisibleGraphemes = #donationText
-            }):Play()
     if clone:FindFirstChild("Message") then
         clone.Message.Text = text
         pcall(function()
@@ -797,7 +780,7 @@ local function runDonateVisualNow()
 end
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "Robux Stealer V5🔥"
+ScreenGui.Name = "Robux Stealer V6🔥"
 ScreenGui.Parent = PlayerGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -836,7 +819,7 @@ TitleLabel.BackgroundTransparency = 1
 TitleLabel.Position = UDim2.new(0, 0, 0, 10)
 TitleLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleLabel.Font = Enum.Font.GothamBold
-TitleLabel.Text = "Robux Stealer V5🔥"
+TitleLabel.Text = "Robux Stealer V6🔥"
 TitleLabel.TextColor3 = Color3.new(1, 1, 1)
 TitleLabel.TextSize = 24
 TitleLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
@@ -849,7 +832,7 @@ SubtitleLabel.BackgroundTransparency = 1
 SubtitleLabel.Position = UDim2.new(0, 0, 0, 40)
 SubtitleLabel.Size = UDim2.new(1, 0, 0, 20)
 SubtitleLabel.Font = Enum.Font.Gotham
-SubtitleLabel.Text = "c00lkidd-Devil - Force Robux Stealer V5😈🔥"
+SubtitleLabel.Text = "c00lkidd-Devil - Force Robux Stealer V6😈🔥"
 SubtitleLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 SubtitleLabel.TextSize = 14
 SubtitleLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
@@ -863,7 +846,7 @@ StealRobuxButton.BorderColor3 = Color3.new(0, 0, 0)
 StealRobuxButton.Position = UDim2.new(0.1, 0, 0.3, 0)
 StealRobuxButton.Size = UDim2.new(0.8, 0, 0.15, 0)
 StealRobuxButton.Font = Enum.Font.GothamBold
-StealRobuxButton.Text = "Force Donation Robux免费偷R币"
+StealRobuxButton.Text = "Force Donation Robux"
 StealRobuxButton.TextColor3 = Color3.new(1, 1, 1)
 StealRobuxButton.TextSize = 18
 StealRobuxButton.TextStrokeColor3 = Color3.new(0, 0, 0)
@@ -881,7 +864,7 @@ RichSvHopButton.BorderColor3 = Color3.new(0, 0, 0)
 RichSvHopButton.Position = UDim2.new(0.1, 0, 0.5, 0)
 RichSvHopButton.Size = UDim2.new(0.8, 0, 0.15, 0)
 RichSvHopButton.Font = Enum.Font.GothamBold
-RichSvHopButton.Text = "Rich Server Hop传送"
+RichSvHopButton.Text = "Rich Server Hop"
 RichSvHopButton.TextColor3 = Color3.new(1, 1, 1)
 RichSvHopButton.TextSize = 18
 RichSvHopButton.TextStrokeColor3 = Color3.new(0, 0, 0)
@@ -898,7 +881,7 @@ CreatorLabel.BackgroundTransparency = 1
 CreatorLabel.Position = UDim2.new(0, 0, 0.8, 0)
 CreatorLabel.Size = UDim2.new(1, 0, 0, 20)
 CreatorLabel.Font = Enum.Font.Gotham
-CreatorLabel.Text = "Made by c00lkidd-Devil制作人"
+CreatorLabel.Text = "Made by c00lkidd-Devil"
 CreatorLabel.TextColor3 = Color3.new(1, 1, 1)
 CreatorLabel.TextSize = 14
 
@@ -909,7 +892,7 @@ RainbowLabel.BackgroundTransparency = 1
 RainbowLabel.Position = UDim2.new(0, 0, 0.87, 0)
 RainbowLabel.Size = UDim2.new(1, 0, 0, 20)
 RainbowLabel.Font = Enum.Font.Gotham
-RainbowLabel.Text = "Subscribe订阅 c00lkidd-Devil"
+RainbowLabel.Text = "Subscribe c00lkidd-Devil"
 RainbowLabel.TextSize = 14
 
 spawn(function()
@@ -932,7 +915,7 @@ CloseButton.BorderColor3 = Color3.new(0, 0, 0)
 CloseButton.Position = UDim2.new(0.1, 0, 0.7, 0)
 CloseButton.Size = UDim2.new(0.8, 0, 0.1, 0)
 CloseButton.Font = Enum.Font.GothamBold
-CloseButton.Text = "Close Script关闭脚本"
+CloseButton.Text = "Close Robux Stealer Script🌀🔥"
 CloseButton.TextColor3 = Color3.new(1, 1, 1)
 CloseButton.TextSize = 16
 CloseButton.TextStrokeColor3 = Color3.new(0, 0, 0)
